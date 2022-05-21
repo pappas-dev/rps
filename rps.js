@@ -19,6 +19,8 @@ function playRound(playerSelection,computerSelection) {
     playerSelection = prompt('Make your choice of rock, paper, or scissors'),'';
     computerSelection = computerPlay();
     if (computerSelection === 'rock' && playerSelection === 'rock'){
+        computerScore += 1;
+        playerScore += 1;
         return `It's a rock tie!`;
     }   if (computerSelection === 'paper' && playerSelection === 'rock'){
         computerScore += 1;
@@ -30,6 +32,8 @@ function playRound(playerSelection,computerSelection) {
         playerScore += 1;
         return`The player wins! Paper against rock!`;
     }   if (computerSelection === 'paper' && playerSelection === 'paper'){
+        computerScore += 1;
+        playerScore += 1;
         return `It's a paper tie!`;
     }   if (computerSelection === 'scissors' && playerSelection === 'paper'){
         computerScore += 1;
@@ -41,6 +45,8 @@ function playRound(playerSelection,computerSelection) {
         playerScore += 1;
         return `The player wins! Scissors against paper!`;
     }   if (computerSelection === 'scissors' && playerSelection === 'scissors'){
+        computerScore += 1;
+        playerScore += 1;
         return `It's a scissors tie!`;
     }   else {
         return alert('Must enter "rock", "paper", or "scissors" only.');
