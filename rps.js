@@ -53,14 +53,17 @@ let playerScore = 0;
 let computerScore = 0;
 let playerSelection;
 let computerSelection;
+
 function game() {
 for (let i = 1; i <= 5; i++) {
-    console.log(playRound(playerSelection,computerSelection));
-    console.log(`Computer: ${computerScore} ; Player: ${playerScore}`);
+    alert(playRound(playerSelection,computerSelection));
+    alert(`Computer: ${computerScore} ; Player: ${playerScore}`);
 }
 if (computerScore > playerScore) {
-    console.log('Computer wins out of 5 games.');
+    location.replace('computer.html');
+}   else if (computerScore === playerScore) {
+    location.replace('tie.html');
 }   else {
-        console.log('Player wins out of 5 games!');
+        location.replace('player.html');
     }
 }
