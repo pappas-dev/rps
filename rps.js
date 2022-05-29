@@ -28,10 +28,6 @@ function playRock(playerSelection,computerSelection) {
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
         return;
-    }   if (pScore === 5) {
-        location.reload();
-    }   if (cScore === 5) {
-        location.reload();
     }
 }
 
@@ -48,10 +44,6 @@ function playPaper(playerSelection,computerSelection) {
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
         return;
-    }   if (pScore === 5) {
-        location.reload();
-    }   if (cScore === 5) {
-        location.reload();
     }
 }
 
@@ -68,10 +60,6 @@ function playScissors(playerSelection,computerSelection) {
         return;
     }   if (computerSelection === 'scissors' && playerSelection === 'scissors'){
         return;
-    }   if (pScore === 5) {
-        location.reload();
-    }   if (cScore === 5) {
-        location.reload();
     }
 }
 
@@ -95,40 +83,3 @@ scissorsButton.addEventListener('click',playScissors);
 
 let playerScorePrint = document.querySelector('.pScore');
 let computerScorePrint = document.querySelector('.cScore');
-
-let pScore = playerScorePrint.textContent = `${playerScore}`;
-let cScore = computerScorePrint.textContent = `${computerScore}`;
-
-/*
-function compWins () {
-    if (computerScorePrint === 5) {
-        alert(`The computer wins!`);
-        location.reload();
-        return;
-    } if (playerScorePrint === 5) {
-        alert(`The computer wins!`);
-        location.reload();
-        return;
-    } if (playerScorePrint === 5 && computerScorePrint === 5) {
-        alert(`It's a tie!`);
-        location.reload;
-        return;
-    }
-}
-compWins();
-
-
-function game() {
-for (let i = 1; i <= 5; i++) {
-    alert(playRound(playerSelection,computerSelection));
-    alert(`Computer: ${computerScore} ; Player: ${playerScore}`);
-}
-if (computerScore > playerScore) {
-    location.replace('computer.html');
-}   else if (computerScore === playerScore) {
-    location.replace('tie.html');
-}   else {
-        location.replace('player.html');
-    }
-}
-*/
