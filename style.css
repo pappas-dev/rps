@@ -1,0 +1,64 @@
+html,
+body {
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 100px;
+}
+h2 {
+    margin-top: -10px;
+}
+.rps-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.rock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.paper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.scissors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.img {
+    width: 200px;
+    height: 200px;
+}
+.score-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.playerScore {
+    text-align: center;
+}
+.computerScore {
+    text-align: center;
+}
+footer {
+    background-color: black;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+}

@@ -1,3 +1,10 @@
+//set variables below
+
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection;
+let computerSelection;
+
 // The randomized RPS computer choices
 
 function computerPlay() {
@@ -13,62 +20,105 @@ function computerPlay() {
     }
 }
 
-// Make a round of RPS w/ result output.
+// set up 3 functions for each button as a choice.
 
-function playRound(playerSelection,computerSelection) {
-    playerSelection = prompt('Make your choice of rock, paper, or scissors'),'';
+function playRock(playerSelection,computerSelection) {
+    playerSelection = 'rock';
     computerSelection = computerPlay();
     if (computerSelection === 'rock' && playerSelection === 'rock'){
-        computerScore += 1;
+        computerScore+= 1;
         playerScore += 1;
-        return `It's a rock tie!`;
+        playerScorePrint.textContent = `${playerScore}`;
+        computerScorePrint.textContent = `${computerScore}`;
     }   if (computerSelection === 'paper' && playerSelection === 'rock'){
         computerScore += 1;
-        return `The computer wins! Paper against rock!`;
+        computerScorePrint.textContent = `${computerScore}`;
     }   if (computerSelection === 'scissors' && playerSelection === 'rock'){
         playerScore += 1;
-        return `The player wins! Rock against scissors!`;
-    }   if (computerSelection === 'rock' && playerSelection === 'paper'){
+        playerScorePrint.textContent = `${playerScore}`;
+    }   gameOver();
+        return;
+}
+
+function playPaper(playerSelection,computerSelection) {
+    playerSelection = 'paper';
+    computerSelection = computerPlay();
+       if (computerSelection === 'rock' && playerSelection === 'paper'){
         playerScore += 1;
-        return`The player wins! Paper against rock!`;
+        playerScorePrint.textContent = `${playerScore}`;
     }   if (computerSelection === 'paper' && playerSelection === 'paper'){
         computerScore += 1;
         playerScore += 1;
-        return `It's a paper tie!`;
+        playerScorePrint.textContent = `${playerScore}`;
+        computerScorePrint.textContent = `${computerScore}`;
     }   if (computerSelection === 'scissors' && playerSelection === 'paper'){
         computerScore += 1;
-        return`The computer wins! Scissors against paper!`;
-    }   if (computerSelection === 'rock' && playerSelection === 'scissors'){
+        computerScorePrint.textContent = `${computerScore}`;
+    }   gameOver();
+        return;
+}
+
+function playScissors(playerSelection,computerSelection) {
+    playerSelection = 'scissors';
+    computerSelection = computerPlay();
+        if (computerSelection === 'rock' && playerSelection === 'scissors'){
         computerScore += 1;
-        return `The computer wins! Rock against scissors.`;
+        computerScorePrint.textContent = `${computerScore}`;
     }   if (computerSelection === 'paper' && playerSelection === 'scissors') {
         playerScore += 1;
-        return `The player wins! Scissors against paper!`;
+        playerScorePrint.textContent = `${playerScore}`;
     }   if (computerSelection === 'scissors' && playerSelection === 'scissors'){
         computerScore += 1;
         playerScore += 1;
-        return `It's a scissors tie!`;
-    }   else {
-        return alert('Must enter "rock", "paper", or "scissors" only.');
+        playerScorePrint.textContent = `${playerScore}`;
+        computerScorePrint.textContent = `${computerScore}`;
+    }   gameOver();
+        return;
+} 
+
+
+// kill buttons with score of 5 and play again button.
+
+function gameOver() {
+    if (playerScore === 5) {
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        playerPrint.textContent = `You won!`;
+    } if (computerScore === 5) {
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        computerPrint.textContent = `The computer won!`;
+    } if (playerScore === 5 && computerScore === 5) {
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        playerPrint.textContent = `It was a tie!`;
+        computerPrint.textContent = `It was a tie!`;  
     }
+ }
+// new game.
+function playAgain() {
+    location.reload();
 }
 
-//Send results to alerts and webpage for final results.
+//map functions to buttons below
 
-let playerScore = 0;
-let computerScore = 0;
-let playerSelection;
-let computerSelection;
-function game() {
-for (let i = 1; i <= 5; i++) {
-    alert(playRound(playerSelection,computerSelection));
-    alert(`Computer: ${computerScore} ; Player: ${playerScore}`);
-}
-if (computerScore > playerScore) {
-    location.replace('computer.html');
-}   else if (computerScore === playerScore) {
-    location.replace('tie.html');
-}   else {
-        location.replace('player.html');
-    }
-}
+let rockButton = document.querySelector('.rockB');
+rockButton.addEventListener('click',playRock);
+
+let paperButton = document.querySelector('.paperB');
+paperButton.addEventListener('click',playPaper);
+
+let scissorsButton = document.querySelector('.scissorsB');
+scissorsButton.addEventListener('click',playScissors);
+
+let playBtn = document.querySelector('.play');
+playBtn.addEventListener('click',playAgain);
+
+let playerScorePrint = document.querySelector('.pScore');
+let computerScorePrint = document.querySelector('.cScore');
+
+let playerPrint = document.querySelector('.pText');
+let computerPrint = document.querySelector('.cText');
