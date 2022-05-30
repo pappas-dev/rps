@@ -12,29 +12,21 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 0 100px;
+    background-color: lightblue;
 }
-h2 {
-    margin-top: -10px;
+h1 {
+    margin-bottom: 60px;
 }
 .rps-container {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
 }
-.rock {
+.rps {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.paper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.scissors {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    
 }
 .img {
     width: 200px;
@@ -45,6 +37,9 @@ h2 {
     gap: 20px;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
 .playerScore {
     text-align: center;
@@ -61,4 +56,24 @@ footer {
     height: 20px;
     width: 100%;
     text-align: center;
+}
+button {
+    background-color: lightcoral;
+    border-radius: 15px;
+    border-width: 4px;
+    border-style: dashed;
+    border-color: black;
+}
+button:active {
+    background-color: lightblue;
+    border-color: gray;
+}
+button:disabled {
+    background-color: lightblue;
+    border-color: lightcoral;
+
+}
+.play {
+    padding: 10px;
+    font-size: 32px;
 }
