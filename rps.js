@@ -1,3 +1,10 @@
+//set variables below
+
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection;
+let computerSelection;
+
 // The randomized RPS computer choices
 
 function computerPlay() {
@@ -19,15 +26,19 @@ function playRock(playerSelection,computerSelection) {
     playerSelection = 'rock';
     computerSelection = computerPlay();
     if (computerSelection === 'rock' && playerSelection === 'rock'){
-        return;
+        computerScore+= 1;
+        playerScore += 1;
+        playerScorePrint.textContent = `${playerScore}`;
+        computerScorePrint.textContent = `${computerScore}`;
+        return playerScore, computerScore;
     }   if (computerSelection === 'paper' && playerSelection === 'rock'){
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
-        return;
+        return computerScore;
     }   if (computerSelection === 'scissors' && playerSelection === 'rock'){
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
-        return;
+        return playerScore;
     }
 }
 
@@ -37,13 +48,17 @@ function playPaper(playerSelection,computerSelection) {
        if (computerSelection === 'rock' && playerSelection === 'paper'){
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
-        return;
+        return playerScore;
     }   if (computerSelection === 'paper' && playerSelection === 'paper'){
-        return;
+        computerScore += 1;
+        playerScore += 1;
+        playerScorePrint.textContent = `${playerScore}`;
+        computerScorePrint.textContent = `${computerScore}`;
+        return playerScore, computerScore;
     }   if (computerSelection === 'scissors' && playerSelection === 'paper'){
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
-        return;
+        return computerScore;
     }
 }
 
@@ -53,22 +68,27 @@ function playScissors(playerSelection,computerSelection) {
         if (computerSelection === 'rock' && playerSelection === 'scissors'){
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
-        return;
+        return computerScore;
     }   if (computerSelection === 'paper' && playerSelection === 'scissors') {
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
-        return;
+        return playerScore;
     }   if (computerSelection === 'scissors' && playerSelection === 'scissors'){
-        return;
+        computerScore += 1;
+        playerScore += 1;
+        playerScorePrint.textContent = `${playerScore}`;
+        computerScorePrint.textContent = `${computerScore}`;
+        return playerScore, computerScore;
     }
 }
 
-//set variables below
+// kill buttons with score of 5. not implemented yet.
 
-let playerScore = 0;
-let computerScore = 0;
-let playerSelection;
-let computerSelection;
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+    }
 
 //map functions to buttons below
 
