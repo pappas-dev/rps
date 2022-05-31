@@ -50,12 +50,12 @@ h1 {
     text-align: center;
 }
 footer {
-    background-color: black;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.199);
+    color: black;
+    font-weight: bold;
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    background-color: #1111116f;
     margin-top: auto;
     padding: 5px;
     text-align: center;
@@ -69,7 +69,7 @@ button {
 }
 button:active {
     background-color: lightblue;
-    border-color: rgba(128, 128, 128, 0.342);
+    border-color: rgba(0, 0, 0, 0.308);
 }
 button:disabled {
     background-color: lightblue;
