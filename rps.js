@@ -84,12 +84,6 @@ function gameOver() {
         paperButton.disabled = true;
         scissorsButton.disabled = true;
         computerPrint.textContent = `computer won!`;
-    } if (playerScore === 5 && computerScore === 5) {
-        rockButton.disabled = true;
-        paperButton.disabled = true;
-        scissorsButton.disabled = true;
-        computerPrint.textContent = (`it's a tie.`)
-        playerPrint.textContent = (`it's a tie.`)
     }
  }
 // new game.
