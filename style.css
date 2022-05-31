@@ -4,14 +4,14 @@ body {
 }
 html {
     position: relative;
-    min-height: 100%;
 }
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 100px;
+    margin: 0 0;
     background-color: lightblue;
+    min-height: 100vh;
 }
 h1 {
     margin-bottom: 60px;
@@ -52,11 +52,12 @@ h1 {
 footer {
     background-color: black;
     color: white;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 20px;
-    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    background-color: #1111116f;
+    margin-top: auto;
+    padding: 5px;
     text-align: center;
 }
 button {
@@ -68,7 +69,7 @@ button {
 }
 button:active {
     background-color: lightblue;
-    border-color: gray;
+    border-color: rgba(128, 128, 128, 0.342);
 }
 button:disabled {
     background-color: lightblue;
@@ -78,4 +79,6 @@ button:disabled {
 .play {
     padding: 10px;
     font-size: 32px;
+    margin-bottom: 20px;
+    margin-top: -20px;
 }
