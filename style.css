@@ -92,4 +92,5 @@ button:disabled {
 .gameText {
     font-size: 48px;
     padding-top: 10px;
+    align-self: center;
 }
