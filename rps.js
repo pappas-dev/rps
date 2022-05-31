@@ -25,16 +25,15 @@ function computerPlay() {
 function playRock(computerSelection) {
     computerSelection = computerPlay();
     if (computerSelection === 'rock'){
-        computerScore+= 1;
-        playerScore += 1;
-        playerScorePrint.textContent = `${playerScore}`;
-        computerScorePrint.textContent = `${computerScore}`;
+        gamePrint.textContent = `🪨 vs. 🪨`;
     }   if (computerSelection === 'paper'){
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
+        gamePrint.textContent = `🪨 vs. 📜`;
     }   if (computerSelection === 'scissors'){
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
+        gamePrint.textContent = `🪨 vs. ✂️`;
     }   gameOver();
         return;
 }
@@ -44,14 +43,13 @@ function playPaper(computerSelection) {
        if (computerSelection === 'rock'){
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
+        gamePrint.textContent = `📜 vs. 🪨`;
     }   if (computerSelection === 'paper'){
-        computerScore += 1;
-        playerScore += 1;
-        playerScorePrint.textContent = `${playerScore}`;
-        computerScorePrint.textContent = `${computerScore}`;
+        gamePrint.textContent = `📜 vs. 📜`;
     }   if (computerSelection === 'scissors'){
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
+        gamePrint.textContent = `📜 vs. ✂️`;
     }   gameOver();
         return;
 }
@@ -61,14 +59,13 @@ function playScissors(computerSelection) {
         if (computerSelection === 'rock'){
         computerScore += 1;
         computerScorePrint.textContent = `${computerScore}`;
+        gamePrint.textContent = `✂️ vs. 🪨`;
     }   if (computerSelection === 'paper') {
         playerScore += 1;
         playerScorePrint.textContent = `${playerScore}`;
+        gamePrint.textContent = `✂️ vs. 📜`;
     }   if (computerSelection === 'scissors'){
-        computerScore += 1;
-        playerScore += 1;
-        playerScorePrint.textContent = `${playerScore}`;
-        computerScorePrint.textContent = `${computerScore}`;
+        gamePrint.textContent = `✂️ vs. ✂️`;
     }   gameOver();
         return;
 } 
@@ -86,13 +83,13 @@ function gameOver() {
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
-        computerPrint.textContent = `the computer won!`;
+        computerPrint.textContent = `computer won!`;
     } if (playerScore === 5 && computerScore === 5) {
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
-        playerPrint.textContent = `it was a tie!`;
-        computerPrint.textContent = `it was a tie!`;  
+        computerPrint.textContent = (`it's a tie.`)
+        playerPrint.textContent = (`it's a tie.`)
     }
  }
 // new game.
@@ -119,3 +116,5 @@ let computerScorePrint = document.querySelector('.cScore');
 
 let playerPrint = document.querySelector('.pText');
 let computerPrint = document.querySelector('.cText');
+
+let gamePrint = document.querySelector('.gameText');
