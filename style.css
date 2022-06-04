@@ -17,25 +17,13 @@ body {
     margin: 0 0;
     min-height: 100vh;
 }
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0px;
-    background-color: #0000001c;
-    font-weight: 900;
-    flex-shrink: 0;
-    margin-top: 0px;
-    text-align: center;
-    padding: 0px 20px;
-}
 .rps-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 .rps {
     display: flex;
@@ -65,13 +53,15 @@ body {
     text-align: center;
 }
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #0000001c;
     font-weight: 900;
     display: flex;
     flex-shrink: 0;
-    justify-content: center;
     margin-top: auto;
-    padding: 10px;
+    padding: 0 10px;
     text-align: center;
 }
 button {
