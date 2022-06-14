@@ -10,23 +10,20 @@ a {
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0px 0px;
     min-height: 100vh;
+    
 }
 .rps-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     gap: 50px;
-    margin-top: 20px;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
-.rockB,
-.paperB,
-.scissorsB {
-    font-size: 150px;
-    justify-items: center;
-}    
 .score-container {
     display: flex;
     gap: 20px;
@@ -58,7 +55,8 @@ button {
     border-width: 4px;
     border-style: dashed;
     border-color: black;
-    height: 160px;
+    font-size: 96px;
+    width: auto;
 }
 button:active {
     background-color: lightblue;
@@ -81,10 +79,4 @@ button:disabled {
     font-size: 32px;
     padding-top: 10px;
     align-self: center;
-}
-img {
-    width: 140px;
-    height: 140px;
-    justify-content: center;
-    padding: 5px;
 }
